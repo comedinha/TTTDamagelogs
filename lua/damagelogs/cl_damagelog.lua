@@ -174,6 +174,8 @@ net.Receive("DL_Ded", function()
 	
 	if Damagelog.RDM_Manager_Enabled and cvars.Bool("ttt_dmglogs_rdmpopups") and net.ReadUInt(1,1) == 1 then
 	
+	 	if (PowerRounds and PowerRounds.CurrentPR and PowerRounds.CurrentPR != false) then return end
+	 
 	 	if LocalPlayer().IsGhost and LocalPlayer():IsGhost() then return end
 	
 		local death_reason = net.ReadString()
